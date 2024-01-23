@@ -1,8 +1,12 @@
-import { $isRangeSelection, $getSelection, SerializedElementNode} from "lexical";
+import {
+  $isRangeSelection,
+  $getSelection,
+  SerializedElementNode,
+} from "lexical";
 import {
   convertLexicalNodesToHTML,
   FeatureProvider,
-  HTMLConverter
+  HTMLConverter,
 } from "@payloadcms/richtext-lexical";
 import { SectionWithEntries } from "@payloadcms/richtext-lexical/dist/field/features/format/common/floatingSelectToolbarSection";
 import { MARK } from "./markdownTransformers";

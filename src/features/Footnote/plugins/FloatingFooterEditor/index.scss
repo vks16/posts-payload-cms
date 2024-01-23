@@ -1,0 +1,67 @@
+@import 'payload/scss';
+
+html[data-theme='light'] {
+  .footer-editor {
+    @include shadow-m;
+  }
+}
+
+.footer-editor {
+  z-index: 10;
+  display: flex;
+  align-items: center;
+  background: var(--color-base-0);
+  padding: 0px 3.72px 0px 6.25px;
+  vertical-align: middle;
+  position: absolute;
+  top: 0;
+  left: 0;
+  opacity: 0;
+  border-radius: 6.25px;
+  transition: opacity 0.2s;
+  will-change: transform;
+
+  .footer-content {
+    display: flex;
+    align-items: center;
+    flex-direction: row;
+    flex-wrap: nowrap;
+    min-height: 28px;
+    box-sizing: border-box;
+    padding: 2px 4px;
+    font-size: 15px;
+    border: 0;
+    outline: 0;
+    position: relative;
+
+    div {
+      display: block;
+      overflow: hidden;
+      margin-right: 30px;
+    }
+  }
+
+  button {
+    all: unset;
+    background-size: 16px;
+    background-position: center;
+    background-repeat: no-repeat;
+    width: 30px;
+    height: 30px;
+    cursor: pointer;
+    color: var(--color-base-600);
+    border-radius: 4px;
+
+    &:hover:not([disabled]) {
+      background-color: var(--color-base-100);
+    }
+  }
+
+  .footer-edit {
+    background-image: url(../../../../icons/edit.svg);
+  }
+
+  .footer-trash {
+    background-image: url(../../../../icons/xmark.svg);
+  }
+}
