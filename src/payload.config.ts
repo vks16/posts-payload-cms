@@ -9,6 +9,7 @@ import { buildConfig } from "payload/config";
 import Users from "./collections/Users";
 import Posts from "./collections/Posts";
 import { MarkTextFeature } from "./features/Mark";
+import { FooterFeature } from "./features/Footnote";
 
 const notAllowedFeatures = ["superscript", "subscript"]
 export default buildConfig({
@@ -19,7 +20,7 @@ export default buildConfig({
   editor: lexicalEditor({
     features: ({ defaultFeatures }) => {
       const filteredFeatures = defaultFeatures.filter(feat => !notAllowedFeatures.includes(feat.key))
-      return [...filteredFeatures, MarkTextFeature()]
+      return [...filteredFeatures, MarkTextFeature(), FooterFeature()]
     },
   }),
   collections: [Users, Posts],
