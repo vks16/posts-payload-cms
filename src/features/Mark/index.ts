@@ -11,7 +11,8 @@ import {
   MarkNode,
   $wrapSelectionInMarkNode,
   $unwrapMarkNode,
-} from "@lexical/mark";
+} from "./nodes";
+import { uuid } from "short-uuid";
 
 export const MarkTextFeature = (): FeatureProvider => {
   return {
@@ -53,7 +54,9 @@ export const MarkTextFeature = (): FeatureProvider => {
                         }
                       });
                     } else if ($isRangeSelection(selection)) {
-                      $wrapSelectionInMarkNode(selection, false, "1");
+                      const isBackward = selection.isBackward()
+                      const id = uuid()
+                      $wrapSelectionInMarkNode(selection, isBackward, id);
                     }
                   });
                 },
